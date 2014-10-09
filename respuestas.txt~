@@ -1,0 +1,5 @@
+18.- Al poner el comando:
+	puts 'Hola Mundo'
+El intérprete nos devuelve por pantalla el 'Hola Mundo' y debajo el valor nulo (nil) que nos indica que él sabe que terminamos de definir el método.
+
+21.- La salida del programa 

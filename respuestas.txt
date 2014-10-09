@@ -1,0 +1,5 @@
+18.- Al poner el comando:
+	puts 'Hola Mundo'
+El intérprete nos devuelve por pantalla el 'Hola Mundo' y debajo el valor nulo (nil) que nos indica que él sabe que terminamos de definir el método.
+
+21.- La ejecución del progarma con el intérprete Ruby simplemente muestra por pantalla el "Hola Mundo" sin devolver ningún otro valor como en el caso del intérprete interactivo utilizado anteriormente, que nos devolvía además el valor nulo.
