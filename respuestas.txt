@@ -3,3 +3,23 @@
 El intérprete nos devuelve por pantalla el 'Hola Mundo' y debajo el valor nulo (nil) que nos indica que él sabe que terminamos de definir el método.
 
 21.- La ejecución del progarma con el intérprete Ruby simplemente muestra por pantalla el "Hola Mundo" sin devolver ningún otro valor como en el caso del intérprete interactivo utilizado anteriormente, que nos devolvía además el valor nulo.
+
+26.- 1] pry(main)> puts x
+10
+=> nil
+[2] pry(main)> def hello
+[2] pry(main)* puts "Hello world"
+[2] pry(main)* end
+=> nil
+[3] pry(main)> hello
+Hello world
+=> nil
+[4] pry(main)> byebye
+bye bye world!!!
+=> nil
+[5] pry(main)> x = "changed"
+=> "changed"
+[6] pry(main)> exit
+program resumes here. Value of x is: changed.
+
+27.- Mientras el intérprete interactivo devuelve el valor nulo, pry simplemente devuelve por pantalla el "Hola mundo".
