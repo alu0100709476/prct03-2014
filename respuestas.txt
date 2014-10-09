@@ -23,3 +23,153 @@ bye bye world!!!
 program resumes here. Value of x is: changed.
 
 27.- Mientras el intérprete interactivo devuelve el valor nulo, pry simplemente devuelve por pantalla el "Hola mundo".
+
+34.- La diferencia entre "\t\n" y '\t\n', es que con la doble comilla el intérprete interpola, mientras que con la comilla simple, el intérprete interpreta lo que se la pasa entre dichas comillas simples como una cadena de caracteres.
+
+35.- %q funciona como poner comillas simples.
+
+%q{hello world\n} es como poner 'hello world\n', es decir, el %q funciona como las comillas simples, por lo que nos muestra por pantalla:
+
+	hello world\n
+Se trata de un string.
+
+%q{'a' 'b' 'c'} muestra por pantalla:
+	'a' 'b' 'c'
+Se trata de un string.
+
+36.- %Q funciona como poner comillas dobles.
+
+Como acabamos de decir, %Q funciona como poner comillas dobles, asi que interpola, y lo que nos muestra por pantalla es:
+
+	hello world
+Se trata de un string.
+
+En este caso, %Q{"a" "b" "c"} nos muestra por pantalla:
+	"a" "b" "c"
+Se trata de un string.
+
+37.- En c queda lo siguiente:
+	"--4--\n--2--\n"
+
+38.- En c queda lo siguiente:
+	"--\#{a}--\n--\#{b}--\n"
+
+39.- s[0,2] es "he"
+s[-1,1] es "o"
+s[0,10] es "hello"
+
+40.- En g nos queda "hello world".
+
+41.- En e queda "...".
+
+42.- El resultado es "2 2 2 ".
+
+43.- Se trata de un array compuesto por lo siguiente:
+	["this", "is", "a", "test"]
+Si hacemos un puts nos aparece:
+	this
+	is
+	a
+	test
+
+44.- Se trata de un array, al ser la letra minúscula no se interpola, por lo que los elementos del array son:
+	["\\t", "\\n"]
+Si hacemos un puts nos aparece lo siguiente:
+	\t
+	\n
+
+45.- Se trata de un array, en este caso se interpola, y si lo ponemos como %W[\t \n] los elementos que nos aparecen son:
+	["\t", "\n"]
+Pero como acabamos de decir, en este caso se interpola, por lo que si hacemos un puts, no nos aparece ningún elemento por pantalla.
+
+46.- En este caso, nils contiene el siguiente array:
+	[nil, nil, nil]
+
+47.- En este caso, zeros contiene el siguiente array:
+	[0, 0, 0]
+
+48.- En b queda el siguiente array:
+	[[1, 2], [3, 4]]
+
+49.- En c queda el siguiente array:
+	[0, 2, 4]
+
+50.- a[1,1] es ["b"].
+a[-2,2] es ["d", "e"].
+a[0..2] es ["a", "b", "c"].
+a[0...1] es ["a"].
+a[-2..-1] es ["d", "e"].
+
+51.- En primer lugar, a es ["A", "B", "c", "d", "e"].
+En segundo lugar, a es ["A", "B", "C", "D", "E"].
+En tercer lugar, a es [1, 2, 3, "A", "B", "C", "D", "E"].
+En cuarto lugar, a es [3, "A", "B", "C", "D", "E"].
+En quinto lugar, a es [3, "A", "B", "C", "D", "Z"].
+En sexto lugar, a es [3, "A", "B", "C", nil].
+
+52.- a = (1...4).to_a nos da el siguiente array [1, 2, 3]
+a = a + [4, 5] nos da el siguiente array [1, 2, 3, 4, 5]
+a += [[6, 7, 8]] nos da el siguiente array [1, 2, 3, 4, 5, [6, 7, 8]]
+a = a + 9 nos da un error ya que no puede convertir el fixnum en array.
+
+53.- x = %w{a b c b a} nos da el siguiente array ["a", "b", "c", "d", "e"].
+x = x - %w{b c d} nos da el siguiente array ["a", "a"].
+
+54.- El resultado es [0, 0, 0, 0, 0, 0, 0, 0].
+
+55.- a << 1 nos da el siguiente array [1].
+a << 2 << 3 nos da el siguiente array [1, 2, 3].
+a << [4, 5, 6] nos da el siguiente array [1, 2, 3, [4, 5, 6]].
+a.concat [7, 8] nos da el siguiente array [1, 2, 3, [4, 5, 6], 7, 8].
+
+56.- c = a | b nos da [1, 2, 3, 4, 5].
+d = b | a nos da [5, 4, 3, 2, 1].
+e = a & b nos da [2, 3, 4].
+f = b & a nos da [4, 3, 2].
+
+57.- a.to_a nos da [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].
+b.to_a nos da [1, 2, 3, 4, 5, 6, 7, 8, 9].
+b.include? 10 nos da false.
+b.include? 8 nos da true.
+b.step(2) {|x| print "#{x} " } nos da 1 3 5 7 9 => 1...10
+1..3.to_a nos da error, nos dice que 'to_a' es un método indefinido para el fixnum 3.
+
+58.- r.member? 50 nos devuelve true.
+r.include? 99.9 nos devuelve true.
+r.member? 99.9 nos devuelve true.
+
+59.- true.class nos da TrueClass.
+false.class nos da FalseClass.
+puts "hello" if 0 nos devuelve hello y el nil.
+puts "hello" if nil no nos devuelve el hello, simplemente el nil.
+puts "hello" if "" nos sale un mensaje de peligro (warning: string literal in condition) y nos muestra el hello y el nil.
+
+60.- x.class nos devuelve symbol.
+x == 'sym' nos devuelve false.
+x == :sym nos devuelve true.
+z.class nos devuelve symbol.
+x == 'sym'.to_sym nos devuelve true.
+x.to_s == 'sym' nos devuelve true.
+
+61.- prynt s nos da Rub y el nil.
+print s, t nos da RubJava.
+
+62.- "%d %s" % [3, "rubies"] nos devuelve "3 rubies".
+
+63.- x, y = 4, 5 nos da [4, 5].
+z = x > y ? x : y nos da 5.
+x, y, z = [1,2,3] nos da [1, 2, 3].
+
+64.- x.keys nos devuelve [:a, :b].
+x.values nos devuelve [1, 2].
+x nos devuelve {:a=>1, :b=>2, :c=>3}.
+x nos devuelve lo mismo que antes {:a=>1, :b=>2, :c=>3}.
+x ahora nos devuelve {:b=>2, :c=>3}.
+x.delete_if { |k,v| v % 2 == 0 } nos devuelve {:a=>1}.
+x nos devuelve {:a=>1}.
+
+65.- La sentencia counts = Hash.new(0) crea un hash que está vacío.
+En principio no hay ninguna diferencia, ya que el comando counts = {} crea también un hash que está vacío.
+
+66.-  El comando 'hello world, hello LPP'.scan /\w+/ nos retorna el siguiente array ["hello", "world", "hello", "LPP"].
+
